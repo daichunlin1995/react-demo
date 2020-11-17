@@ -6,15 +6,15 @@ import { Provider } from 'react-redux'
 import store from './store'
 import reportWebVitals from './reportWebVitals';
 
-const App = (
+const App = () => (
   <Provider store={store}>
     <TodoList></TodoList>
   </Provider>
 )
 ReactDOM.render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

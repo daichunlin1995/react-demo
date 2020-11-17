@@ -34,6 +34,7 @@ export const getList = () => {
     return (dispatch)=>{
         axios.get('./data.json').then(res => {
             console.log(res)
+            console.log('这是一个请求')
             const action = initList(res.data.list)
             dispatch(action)
         })

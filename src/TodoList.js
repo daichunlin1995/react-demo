@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import TodoItem from './TodoItem'
-// import store from './store'
+import store from './store'
 import { connect } from 'react-redux'
 import { inputValue, addList, deleteList, getList } from './store/actionCreator'
 // import axios from 'axios'
@@ -10,6 +10,7 @@ class TodoList extends Component {
     constructor() {
         super() //关系到this指向
         this.btn1 = React.createRef()
+        this.state = {}
         // this.state = store.getState()
         // store.subscribe(this.handleStoreChange.bind(this))
     }
@@ -68,8 +69,8 @@ class TodoList extends Component {
     //可以对插件进行实例化 
     componentDidMount() {
         console.log('执行componentDidMount')
-        // const action = getList()
-        // store.dispatch(action)
+        const action = getList()
+        store.dispatch(action)
 
         //ref
         console.log('这是ref', this.btn)
@@ -112,8 +113,8 @@ const mapStateToProps = (state) => ({
     inputValue: state.inputValue,
     list: state.list
 })
-const mapDispatchToProps = () => ({
+// const mapDispatchToProps = () => ({
 
-})
+// })
 
-export default connect(mapStateToProps,mapDispatchToProps)(TodoList)
+export default connect(mapStateToProps)(TodoList)

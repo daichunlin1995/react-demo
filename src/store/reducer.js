@@ -7,7 +7,6 @@ const defaultState = {
 
 let reducer = (state = defaultState,action) => {
     const { type,value } = action
-    console.log(constant.CHANGE_INPUT_VALUE)
     let newState = { ...state }
     if(type === constant.CHANGE_INPUT_VALUE){
         newState.inputValue = value
